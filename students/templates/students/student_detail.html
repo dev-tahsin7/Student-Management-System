@@ -1,0 +1,14 @@
+{% extends 'students/base.html' %}
+{% block content %}
+<h2>Student Details</h2>
+<ul class="list-group">
+    <li class="list-group-item"><strong>Name:</strong> {{ student.name }}</li>
+    <li class="list-group-item"><strong>Email:</strong> {{ student.email }}</li>
+    <li class="list-group-item"><strong>Phone Number:</strong> {{ student.phone_number }}</li>
+    <li class="list-group-item"><strong>Course:</strong> {{ student.course }}</li>
+</ul>
+<br>
+<a href="/" class="btn btn-primary">Back to List</a>
+<a href="{% url 'student_edit' student.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'student_delete' student.pk %}" class="btn btn-danger">Delete</a>
+{% endblock %} 
